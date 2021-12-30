@@ -1,0 +1,16 @@
+.studentForm {  
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.studentForm h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.studentForm form {
+    width: 100%;
+    margin: auto;
+}

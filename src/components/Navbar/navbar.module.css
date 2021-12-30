@@ -1,0 +1,25 @@
+.pageLinks {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.pageLinks a {
+    background-color: #0C2E59;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: white;
+}
+
+.pageLinks a:hover {
+    background-color:#3F7EA6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    flex-wrap: wrap;
+}

@@ -13,6 +13,8 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import styles from './contestForm.module.css';
+import axios from 'axios';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -25,10 +27,10 @@ const MenuProps = {
     },
 };
 
-function getStyles(name, personName, theme) {
+function getStyles(name, tags, theme) {
     return {
         fontWeight:
-            personName.indexOf(name) === -1
+            tags.indexOf(name) === -1
                 ? theme.typography.fontWeightRegular
                 : theme.typography.fontWeightMedium,
     };
@@ -50,23 +52,53 @@ const names = [
 
 const ContestForm = () => {
     const theme = useTheme();
-    const [personName, setPersonName] = useState([]);
+    const [tags, setTags] = useState([]);
 
     const handleChange = (event) => {
         const {
             target: { value },
         } = event;
-        setPersonName(
+        setTags(
             // On autofill we get a the stringified value.
             typeof value === 'string' ? value.split(',') : value,
         );
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        let data = new FormData(e.target);
+
+        const payload = {
+            title: data.get('contest-title'),
+            type: data.get('contest-type'),
+            deadline: data.get('contest-deadline'),
+            tags: [...tags],
+            duration: data.get('contest-duration'),
+            marks: data.get('contest-marks'),
+            batchNo: data.get('contest-batchNo'),
+        }
+
+        axios(`http://localhost:5000/contest`,{
+            method: 'post',
+            data: payload   ,
+            header: {
+                'Accept': '*'
+            }
+        })
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log('Error', err);
+        });
+    }
     return (
-        <div>
+        <div className={styles.contestForm}>
             <h1>Contest Form</h1>
 
-            <form>
-                <Stack spacing={2} width={350}>
+            <form onSubmit={handleSubmit}>
+                <Stack spacing={2} width={350} sx={{ margin: 'auto' }}>
 
                     <TextField name='contest-title' label='Title' variant='outlined' required />
 
@@ -85,7 +117,8 @@ const ContestForm = () => {
                         id="datetime-local"
                         label="Deadline"
                         type="datetime-local"
-                        defaultValue="2022-01-01T23:59"
+                        name = 'contest-deadline'
+                        // defaultValue="2022-01-01THH:MM"
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -95,7 +128,7 @@ const ContestForm = () => {
                         labelId="demo-multiple-chip-label"
                         id="demo-multiple-chip"
                         multiple
-                        value={personName}
+                        value={tags}
                         onChange={handleChange}
                         input={<OutlinedInput id="select-multiple-chip" label="Tags" />}
                         renderValue={(selected) => (
@@ -111,16 +144,16 @@ const ContestForm = () => {
                             <MenuItem
                                 key={name}
                                 value={name}
-                                style={getStyles(name, personName, theme)}
+                                style={getStyles(name, tags, theme)}
                             >
                                 {name}
                             </MenuItem>
                         ))}
                     </Select>
-                    <TextField label='Duration' variant='outlined' required />
-                    <TextField label='Marks' variant='outlined' required />
-                    <TextField label='Batch No.' variant='outlined' required />
-                    <Button variant="contained" type = "submit" disableElevation>Create Contest</Button>
+                    <TextField name='contest-duration' label='Duration' variant='outlined' required />
+                    <TextField name='contest-marks' label='Marks' variant='outlined' required />
+                    <TextField name='contest-batchNo' label='Batch No.' variant='outlined' required />
+                    <Button variant="contained" type="submit" disableElevation>Create Contest</Button>
                 </Stack>
             </form>
         </div >
