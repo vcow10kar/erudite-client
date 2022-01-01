@@ -95,10 +95,11 @@ const ContestForm = () => {
     }
     return (
         <div className={styles.contestForm}>
-            <h1>Contest Form</h1>
+           
 
             <form onSubmit={handleSubmit}>
-                <Stack spacing={2} width={350} sx={{ margin: 'auto' }}>
+                <Stack spacing={2} width={350} sx={{ margin: 'auto' }} className = {styles.ContestFormForm}>
+                <h1>Contest Form</h1>
 
                     <TextField name='contest-title' label='Title' variant='outlined' required />
 

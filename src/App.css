@@ -17,3 +17,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.MainContent {
+  margin: 20px;
+}

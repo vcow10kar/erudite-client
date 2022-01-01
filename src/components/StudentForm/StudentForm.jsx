@@ -22,45 +22,46 @@ const StudentForm = () => {
             password: data.get('password'),
             batchNo: data.get('batchNo'),
             name: {
-            
-            firstName: data.get('firstName'),
-            lastName: data.get('lastName')
+
+                firstName: data.get('firstName'),
+                lastName: data.get('lastName')
             }
         }
 
-        axios(`http://localhost:5000/student`,{
+        axios(`http://localhost:5000/student`, {
             method: 'post',
-            data: payload   ,
+            data: payload,
             header: {
                 'Accept': '*'
             }
         })
-        .then(res => {
-            console.log(res);
-        })
-        .catch(err => {
-            console.log('Error', err);
-        });
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log('Error', err);
+            });
     }
     return (
-        <div className= {styles.studentForm}>
-            <h1>Student Form</h1>
+        <div className={styles.studentForm}>
 
             <form onSubmit={handleSubmit}>
-                <Stack spacing={2} width={350} sx = {{margin: 'auto'}}>
+                <Stack spacing={2} width={350} sx={{ margin: 'auto' }} className = {styles.studentFormForm}>
+
+                    <h1>Student Form</h1>
 
                     <TextField name='firstName' label='First Name' variant='outlined' required />
                     <TextField name='lastName' label='Last Name' variant='outlined' required />
 
-                    <TextField name = "emailId" label='Email Id' variant='outlined' required />
+                    <TextField name="emailId" label='Email Id' variant='outlined' required />
 
-                    <TextField name = "password" label='Password' variant='outlined' required />
+                    <TextField name="password" label='Password' variant='outlined' required />
 
-                    <TextField name = "city" label='City' variant='outlined' required />
+                    <TextField name="city" label='City' variant='outlined' required />
 
-                    <TextField name = "contactNo" label='Contact No.' variant='outlined' required />
+                    <TextField name="contactNo" label='Contact No.' variant='outlined' required />
 
-                    <TextField name = "age" label='Age' variant='outlined' required />
+                    <TextField name="age" label='Age' variant='outlined' required />
 
                     <Select
                         labelId="demo-simple-select-label"
@@ -68,7 +69,7 @@ const StudentForm = () => {
                         label="Gender"
                         displayEmpty
                         required
-                        name = "gender"
+                        name="gender"
                     >
                         <MenuItem value="">
                             <em>Gender</em>
@@ -80,8 +81,8 @@ const StudentForm = () => {
 
 
 
-                    <TextField name = "education" label='Education' variant='outlined' required />
-                    <TextField name = "batchNo" label='Batch No.' variant='outlined' required />
+                    <TextField name="education" label='Education' variant='outlined' required />
+                    <TextField name="batchNo" label='Batch No.' variant='outlined' required />
 
                     <Button variant="contained" type="submit" disableElevation>Create Student Account</Button>
                 </Stack>
