@@ -41,3 +41,16 @@
     justify-content: right;
     flex-direction: row-reverse;
 }
+
+.studentPageHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.studentPageHeader select {
+    padding: 10px;
+}
+
+.studentPageHeader select:focus {
+    outline: none !important;
+}

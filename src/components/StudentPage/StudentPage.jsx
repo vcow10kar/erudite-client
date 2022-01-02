@@ -67,7 +67,7 @@ const StudentPage = () => {
     }, []);
     return (
         <div>
-            <div>
+            <div className= {styles.studentPageHeader}>
                 <h1>Student Page</h1>
                 <div>
                     <select onChange = {handleChange}>
