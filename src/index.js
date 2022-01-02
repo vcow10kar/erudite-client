@@ -5,14 +5,16 @@ import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material';
 import customTheme from './utils/theme';
-
+import AuthContext from './components/Context/LoginContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={customTheme}>
-      <Router>
-        <App />
-      </Router>
+      <AuthContext>
+        <Router>
+          <App />
+        </Router>
+      </AuthContext>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

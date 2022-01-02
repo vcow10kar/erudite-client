@@ -25,9 +25,10 @@ const ContestPage = () => {
         console.log('Getting contest data....');
         getAllContests();
     }, []);
+    
     return (
         <div>
-            Contest Page
+            <h1>Contest Page</h1>
 
             {contests !== null ?
                 <div>

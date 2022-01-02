@@ -1,0 +1,43 @@
+.studentInfo {
+    width: 300px;
+    padding: 20px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    margin: 20px auto;
+}
+
+.studentInfo p {
+    margin: 5px 0px;
+}
+
+.studentDetails {
+    margin-top: 20px;
+}
+
+.infoTitle {
+    font-weight: 600;
+}
+
+.studentTags {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.studentTags {
+    background-color: #3F7EA6;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.studentInfoParent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.studentButtons {
+    display: flex;
+    justify-content: right;
+    flex-direction: row-reverse;
+}

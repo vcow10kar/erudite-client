@@ -1,0 +1,19 @@
+.homeLinks {
+    display: flex;
+    flex-direction: column;
+    width: 7.5%;
+}
+
+.homeLinks a{
+    background-color: #0C2E59;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px 0px;
+}
+
+.homePage {
+    display: flex;
+    height: 100vh - 100px;
+    justify-content: space-between;
+}

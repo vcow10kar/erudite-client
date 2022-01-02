@@ -3,6 +3,7 @@ import ContestForm from '../ContestForm/ContestForm';
 import ContestPage from '../ContestPage/ContestPage';
 import Home from '../Home/Home';
 import StudentForm from '../StudentForm/StudentForm';
+import StudentPage from '../StudentPage/StudentPage';
 
 const AppRoutes = () => {
     return (
@@ -12,6 +13,7 @@ const AppRoutes = () => {
                 <Route path = '/contestForm' element = {<ContestForm/>}/>
                 <Route path = '/studentForm' element = {<StudentForm/>}/>
                 <Route path = '/allContest' element = {<ContestPage/>}/>
+                <Route path = '/allStudent' element = {<StudentPage/>}/>
             </Routes>
         </div>
     )

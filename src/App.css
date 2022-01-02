@@ -1,7 +1,6 @@
 .App {
-  width: 80%;
-  justify-content: center;
-  margin: auto;
+  width: 100%;
+  
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -20,4 +19,8 @@ a {
 
 .MainContent {
   margin: 20px;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 100px;
 }

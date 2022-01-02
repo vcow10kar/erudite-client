@@ -17,9 +17,28 @@
     background-color:#3F7EA6;
 }
 
+.navbarParent {
+    width: 100%;
+    box-shadow: 0px 4px 0px #E7E7E7;
+    background-color: white;
+    z-index: 4;
+    top: 0px;
+    position: fixed;
+    background: url(https://static9.depositphotos.com/1000940/1139/v/600/depositphotos_11394419-stock-illustration-vector-seamless-pattern-with-education.jpg);
+}
+
+.navbarParentOpac {
+    width: 100%;
+    background-color: rgba(231, 231, 231, 0.836);
+}
+
 .navbar {
+    margin: 20px;
     display: flex;
     justify-content: space-between;
-    margin: 20px;
+    margin: 0px 20px;
+    padding: 20px 0px;
     flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
 }
