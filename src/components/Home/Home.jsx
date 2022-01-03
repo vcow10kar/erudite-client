@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import { LoginContext } from '../Context/LoginContext';
 import LoginPage from '../LoginPage/LoginPage';
 import styles from './home.module.css';
+import HomePageLinks from './HomePageLinks';
 
 const Home = () => {
     const { userObject } = useContext(LoginContext);
@@ -16,10 +16,7 @@ const Home = () => {
                 <p>Erudite is a modern Student Management System designed to seamlessly run any type of education institution</p>
             </div>
             {userObject ?
-                <div className={styles.homeLinks}>
-                    <Link to='/allContest'>All Contests</Link>
-                    <Link to='/allStudent'>All Students</Link>
-                </div>
+                <HomePageLinks/>
                 : null}
             {userObject ? null :
                 <div>

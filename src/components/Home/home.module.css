@@ -1,19 +1,45 @@
 .homeLinks {
+    width: 70%;
+    margin: 10px auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
 }
 
-.homeLinks a{
+
+
+.homePage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh - 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.homeLinksIndividual {
+    width: 300px;
+    display: flex;  
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    border: 2px solid #0C2E59;
+    border-radius: 4px;
+    justify-content: center;
+
+}
+
+.homeLinksIndividual img {
+    width: 50%;
+    height: auto;
+}
+
+.homeLinksIndividual p{
+    width: 80%;
     background-color: #0C2E59;
     padding: 10px;
     border-radius: 4px;
     color: white;
-    margin: 10px 0px;
-}
-
-.homePage {
-    display: flex;
-    height: 100vh - 100px;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    margin: 20px auto;
 }
