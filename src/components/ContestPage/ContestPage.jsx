@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import ContestInfo from "./ContestInfo";
+import styles from './contestPage.module.css';
 
 const ContestPage = () => {
     const [contests, setContests] = useState(null);
@@ -31,7 +32,7 @@ const ContestPage = () => {
             <h1>Contest Page</h1>
 
             {contests !== null ?
-                <div>
+                <div className= {styles.contestInfoParent}>
                     {contests.map((el, id) => {
                         return <ContestInfo info={el} key={`ContestInfo-${id}`} />
                     })}

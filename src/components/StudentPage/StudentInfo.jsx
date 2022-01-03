@@ -6,7 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 const StudentInfo = ({ info, handleDelete }) => {
     return (
         <div className={styles.studentInfo}>
-            <p className={styles.studentTags}><span>Batch No.:</span><span>{info.batchNo}</span></p>
+            <p className={styles.studentTags}><span>Batch:</span><span>{info.batchNo}</span></p>
             <div className={styles.studentDetails}>
                 <p><span className={styles.infoTitle}>Name:</span> {info.name.firstName} {info.name.lastName}</p>
                 <p><span className={styles.infoTitle}>Age:</span> {info.age}</p>

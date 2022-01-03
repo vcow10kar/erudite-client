@@ -8,10 +8,6 @@ const LoginPage = () => {
 
     return (
         <div>
-            <div>
-                Login Here
-            </div>
-
             <div onClick={googleLogin}>
                 <Button startIcon = {<GoogleIcon/>} variant = "contained" disableElevation>Admin Login</Button>
             </div>

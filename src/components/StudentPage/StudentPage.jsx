@@ -18,8 +18,16 @@ const StudentPage = () => {
             }
 
             case 'name': {
-                let temp = [...students].sort((a, b) => a.name.firstName - b.name.firstName);
-                setStudents(temp);
+                let temp = [...students].sort((a, b) => {
+                    if(a.name.lastName < b.name.lastName) {
+                        return -1;
+                    } else if(a.name.lastName > b.name.lastName) {
+                        return 1;
+                    }
+
+                    return 0;
+                });
+                setStudents(prev => [...temp]);
                 break;
             }
 

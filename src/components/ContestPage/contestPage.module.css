@@ -16,3 +16,24 @@
     padding: 10px;
     border-radius: 4px;
 }
+
+.contestInfoParent {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 8px;
+}
+
+
+.contestBatch {
+    display: flex;
+    gap: 20px;
+    background-color: #3F7EA6;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 8px;
+}

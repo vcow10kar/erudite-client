@@ -1,25 +1,40 @@
-.homeLinks {
-    width: 70%;
-    margin: 10px auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+.adminDashboard {
+    justify-content: center;
+    text-align: center;
     margin-top: 50px;
 }
 
+.homeLinksParent {
+    width: 60%;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+    padding: 30px;
+    padding-bottom: 20px;
+    margin: 20px auto;
+}
 
+.homeLinks {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
 
 .homePage {
     display: flex;
     flex-direction: column;
     height: 100vh - 100px;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
+} 
+
+.homePage h1 {
+    margin-top: 20px;
 }
 
 .homeLinksIndividual {
-    width: 300px;
+    width: 250px;
     display: flex;  
     flex-direction: column;
     text-align: center;
@@ -28,6 +43,14 @@
     border-radius: 4px;
     justify-content: center;
 
+}
+
+.homeLinksIndividual:hover {
+    background-color: #e9e9e9;
+}
+
+.homeLinksIndividual:hover  p {
+    color: #e9e9e9;
 }
 
 .homeLinksIndividual img {
@@ -42,4 +65,64 @@
     border-radius: 4px;
     color: white;
     margin: 20px auto;
+}
+
+.heroSection {
+    width: 94.4%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    margin-top: 6%;
+    border: 2px solid #0C2E59;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.heroSectionText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.heroSectionText > h1, h2, p {
+    padding: 10px 0px;
+}
+
+.heroSectionH1 {
+    font-size: 76px;
+}
+
+.heroSectionH2 {
+    font-size: 34px;
+}
+
+.heroSectionP {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #6d6e6e;
+}
+
+.heroSectionImg {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.heroSectionImg img {
+    max-width: 100%;        
+    height: auto;
+    margin: auto;
+}
+
+.homeLinksParent h1 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.loginSection {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
