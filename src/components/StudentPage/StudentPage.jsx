@@ -39,7 +39,7 @@ const StudentPage = () => {
 
     const getAllStudents = () => {
 
-        axios('http://localhost:5000/student', {
+        axios(`${process.env.REACT_APP_BACKEND_URL}/student`, {
             method: 'get',
             headers: {
                 'Accept': '*'
@@ -55,7 +55,7 @@ const StudentPage = () => {
     }
 
     const handleDelete = (id) => {
-        axios(`http://localhost:5000/student/${id}`, {
+        axios(`${process.env.REACT_APP_BACKEND_URL}/student/${id}`, {
             method: 'delete',
             headers: {
                 'Accept': '*'

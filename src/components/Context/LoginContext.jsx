@@ -11,7 +11,7 @@ export default function AuthContext({ children }) {
         let user = localStorage.getItem('userObject');
 
         if (!user) {
-            axios.get('http://localhost:5000/getAdmin', { withCredentials: true })
+            axios.get(`${process.env.REACT_APP_BACKEND_URL}/getAdmin`, { withCredentials: true })
                 .then(res => {
                     if (res.data) {
                         setUserObject(res.data);

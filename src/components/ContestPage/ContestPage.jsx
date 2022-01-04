@@ -7,7 +7,7 @@ const ContestPage = () => {
     const [contests, setContests] = useState(null);
 
     const getAllContests = () => {
-        axios(`http://localhost:5000/contest`, {
+        axios(`${process.env.REACT_APP_BACKEND_URL}/contest`, {
             method: 'get',
             header: {
                 'Accept': '*'

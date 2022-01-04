@@ -79,7 +79,7 @@ const ContestForm = () => {
             batchNo: data.get('contest-batchNo'),
         }
 
-        axios(`http://localhost:5000/contest`,{
+        axios(`${process.env.REACT_APP_BACKEND_URL}/contest`,{
             method: 'post',
             data: payload   ,
             header: {

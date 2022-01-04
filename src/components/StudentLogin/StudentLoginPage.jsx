@@ -38,7 +38,7 @@ const StudentLoginPage = () => {
 
         console.log('Payload', payload);
 
-        let response = await fetch('http://localhost:5000/auth/login', {
+        let response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

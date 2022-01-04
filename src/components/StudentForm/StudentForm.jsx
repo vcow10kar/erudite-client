@@ -28,7 +28,7 @@ const StudentForm = () => {
             }
         }
 
-        axios(`http://localhost:5000/student`, {
+        axios(`${process.env.REACT_APP_BACKEND_URL}/student`, {
             method: 'post',
             data: payload,
             header: {
