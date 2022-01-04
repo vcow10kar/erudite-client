@@ -4,10 +4,12 @@ import { useContext } from 'react';
 import { LoginContext } from '../Context/LoginContext';
 import PersonIcon from '@mui/icons-material/Person';
 import { Button } from '@mui/material';
-import LoginPage from '../LoginPage/LoginPage';
 import axios from 'axios';
+import { StudentLoginContext } from '../Context/StudentLoginContext';
 
 const Navbar = () => {
+    const { studentObject } = useContext(StudentLoginContext);
+
     const { userObject } = useContext(LoginContext);
 
     const handleLogout = () => {
@@ -15,16 +17,21 @@ const Navbar = () => {
         axios.get('http://localhost:5000/auth/logout', {
             withCredentials: true
         })
-        .then(res => {
-            if(res.data === 'done') {
-                localStorage.removeItem('userObject');
-                window.location.href = '/';
-            }
-            console.log(res);
-        }) 
-        .catch(err => {
-            console.log('Error:', err);
-        })
+            .then(res => {
+                if (res.data === 'done') {
+                    localStorage.removeItem('userObject');
+                    window.location.href = '/';
+                }
+                console.log(res);
+            })
+            .catch(err => {
+                console.log('Error:', err);
+            })
+    }
+
+    const handleStudentLogout = () => {
+        localStorage.removeItem('studentInfo');
+        window.location.href = '/';
     }
 
     return (
@@ -35,7 +42,10 @@ const Navbar = () => {
                         <h1 className={styles.companyName}>Erudite</h1>
                     </Link>
                     {userObject ?
-                        <Button onClick={handleLogout} startIcon = {<PersonIcon fontSize= "large"/>} variant = "contained" disableElevation>{userObject.name.firstName} (LOGOUT)</Button>
+                        <Button onClick={handleLogout} startIcon={<PersonIcon fontSize="large" />} variant="contained" disableElevation>{userObject.name.firstName} (LOGOUT)</Button>
+                        : null}
+                    {studentObject ?
+                        <Button onClick={handleStudentLogout} startIcon={<PersonIcon fontSize="large" />} variant="contained" disableElevation>{studentObject.name.firstName} (LOGOUT)</Button>
                         : null}
                 </div>
 

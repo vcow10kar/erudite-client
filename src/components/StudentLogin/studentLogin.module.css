@@ -1,0 +1,12 @@
+.loginPage {
+    justify-content: center;
+    text-align: center;
+}
+
+.loginPage > form > div {
+    margin: 20px 0px;
+}
+
+.loginButton {
+    width: 100%;
+}
