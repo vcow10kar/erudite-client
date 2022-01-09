@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 
 const LoginPage = () => {
     const googleLogin = () => {
-        window.open(`${process.env.REACT_APP_BACKEND_URL}/auth/google`, "_self");
+        window.open(`${process.env.REACT_APP_BACKEND_URL}/auth/google`, "_blank");
     }
 
     return (
