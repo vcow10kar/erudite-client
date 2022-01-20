@@ -9,7 +9,6 @@
 <hr/>
 
 ### Landing Page
-Landing Page
 ![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1642692081297/bHV3o3mZj.png)
 
 ### Admin Dashboard
